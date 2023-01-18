@@ -25,7 +25,7 @@ public class GetPetsByStatusTests : IClassFixture<CustomWebApplicationFactory<Pr
     }
 
     [Fact]
-    public async Task GetPetsByStatus_Should_ReturnAtleastOnePet()
+    public async Task GetPetsByStatus_Should_Return()
     {
         // Arrange
         var expected = new List<PetDto> { new(Id: 1, Name: "Dog") };
