@@ -39,7 +39,7 @@ public class GetPetsByStatusTests : IClassFixture<CustomWebApplicationFactory<Pr
             .RespondWith(
                 Response.Create()
                     .WithStatusCode(StatusCodes.Status200OK)
-                    .WithBody(JsonSerializer.Serialize(new List<PetDto> { new(1, "Dog") })));
+                    .WithBody(JsonSerializer.Serialize(expected)));
 
         // Act
         var actual = await _httpClient.GetFromJsonAsync<List<PetDto>>($"/pet/findByStatus?status={PetStatus.Available}", JsonOptions);
